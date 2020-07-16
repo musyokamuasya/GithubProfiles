@@ -1,6 +1,8 @@
 // The application's main entry point
 
 const github = new Github();
+const design = new Design();
+
 const searchUser = document.querySelector('#search-user');
 searchUser.addEventListener('keyup', (e) => {
     // Get the text entered and search from github api
@@ -10,7 +12,7 @@ searchUser.addEventListener('keyup', (e) => {
             if (data.profile.message === 'Not Found') {
                 //     Show error message & Persist the current user
             } else {
-                //  Show the profile   
+                design.showProfile(data.profile);
             }
         });
     } else {
