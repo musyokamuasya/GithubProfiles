@@ -11,11 +11,13 @@ searchUser.addEventListener('keyup', (e) => {
         github.getUser(userText).then(data => {
             if (data.profile.message === 'Not Found') {
                 //     Show error message & Persist the current user
+                design.showAlert('User not found', 'alert alert-danger');
             } else {
                 design.showProfile(data.profile);
             }
         });
     } else {
         //     Clear the profile data
+        design.clearProfile();
     }
 });
